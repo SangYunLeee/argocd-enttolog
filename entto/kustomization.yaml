@@ -15,7 +15,6 @@ resources:
 
 generatorOptions:
   disableNameSuffixHash: true
-# secretGenerator:
-# - name: entto-secret-1
-#   envs:
-#   - .env
+images:
+- name: sororiri/entto-backend
+  newTag: eb46550
