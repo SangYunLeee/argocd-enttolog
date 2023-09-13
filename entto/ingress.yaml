@@ -11,7 +11,7 @@ spec:
   tls:
   - hosts:
     - argobnd.enttolog.shop
-    secretName: enttolog-xyz-tls
+    secretName: argo-enttolog-xyz-tls
   rules:
   - host: argobnd.enttolog.shop
     http:
@@ -35,7 +35,7 @@ spec:
   tls:
   - hosts:
     - argofnt.enttolog.shop
-    secretName: entto-shop-tls
+    secretName: argo-entto-shop-tls
   rules:
   - host: argofnt.enttolog.shop
     http:

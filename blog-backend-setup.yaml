@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook
+  name: entto-blog-argo
   namespace: argocd
 spec:
   destination:
@@ -11,7 +11,7 @@ spec:
   source:
     path: entto
     repoURL: "https://github.com/SangYunLeee/argocd-enttolog.git"
-    targetRevision: master
+    targetRevision: HEAD
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
