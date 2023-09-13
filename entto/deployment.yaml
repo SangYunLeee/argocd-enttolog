@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: entto-backend-argocd
+spec:
+  selector:
+    matchLabels:
+      app: entto-backend-argocd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: entto-backend-argocd
+    spec:
+      containers:
+      - image: sororiri/entto-backend:0.0.3
+        imagePullPolicy: Always
+        name: entto-backend-argocd
+        ports:
+        - containerPort: 80
+        envFrom:
+        - secretRef:
+            name: entto-secret-1
+        volumeMounts:
+          - name: minikube-mount
+            mountPath: /app/uploads_
+      volumes:
+      - name: minikube-mount
+        hostPath:
+          path: /db/entto
+          type: Directory
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: entto-front-argocd
+spec:
+  selector:
+    matchLabels:
+      app: entto-front-argocd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: entto-front-argocd
+    spec:
+      containers:
+      - image: sororiri/entto-front:0.0.3
+        imagePullPolicy: Always
+        name: entto-front-argocd
+        ports:
+        - containerPort: 80
