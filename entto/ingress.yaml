@@ -22,10 +22,10 @@ spec:
             name: entto-backend-argocd
             port:
               number: 80
-status:
-  loadBalancer:
-    ingress:
-    - hostname: placeholder
+# status:
+#   loadBalancer:
+#     ingress:
+#     - hostname: placeholder
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -50,7 +50,7 @@ spec:
             name: entto-front-argocd
             port:
               number: 80
-status:
-  loadBalancer:
-    ingress:
-    - hostname: placeholder
+# status:
+#   loadBalancer:
+#     ingress:
+#     - hostname: placeholder
