@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: entto-backend-argocd
+  name: entto-backend
   annotations:
     cert-manager.io/issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/enable-cors: "true"
@@ -9,40 +9,40 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - argobnd.enttolog.shop
-    secretName: argo-enttolog-xyz-tls
+    - www.enttolog.xyz
+    secretName: www-enttolog-xyz-tls
   rules:
-  - host: argobnd.enttolog.shop
+  - host: www.enttolog.xyz
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: entto-backend-argocd
+            name: entto-backend
             port:
               number: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: entto-front-argocd
+  name: entto-front
   annotations:
     cert-manager.io/issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - argofnt.enttolog.shop
-    secretName: argo-entto-shop-tls
+    - www.enttolog.shop
+    secretName: www-entto-shop-tls
   rules:
-  - host: argofnt.enttolog.shop
+  - host: www.enttolog.shop
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: entto-front-argocd
+            name: entto-front
             port:
               number: 80
