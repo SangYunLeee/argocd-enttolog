@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: entto-backend
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -27,9 +27,19 @@ spec:
             mountPath: /app/uploads_
       volumes:
       - name: entto-mount
-        hostPath:
-          path: /home/sori/db/entto
-          type: Directory
+        persistentVolumeClaim:
+          claimName: nfs-pvc
+        # hostPath:
+        #   path: /home/sori/db/entto
+        #   type: Directory
+
+  #     volumeMounts:
+  #       - name: nfs-volume
+  #         mountPath: /mnt/nfs  # 파드 내에서 NFS를 마운트할 경로
+  # volumes:
+  #   - name: nfs-volume
+  #     persistentVolumeClaim:
+  #       claimName: nfs-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment
