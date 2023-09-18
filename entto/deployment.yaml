@@ -28,18 +28,7 @@ spec:
       volumes:
       - name: entto-mount
         persistentVolumeClaim:
-          claimName: nfs-pvc
-        # hostPath:
-        #   path: /home/sori/db/entto
-        #   type: Directory
-
-  #     volumeMounts:
-  #       - name: nfs-volume
-  #         mountPath: /mnt/nfs  # 파드 내에서 NFS를 마운트할 경로
-  # volumes:
-  #   - name: nfs-volume
-  #     persistentVolumeClaim:
-  #       claimName: nfs-pvc
+          claimName: entto-nfs-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment

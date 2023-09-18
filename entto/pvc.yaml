@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: entto-nfs-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeName: entto-nfs-pv
+  resources:
+    requests:
+      storage: 10Gi
