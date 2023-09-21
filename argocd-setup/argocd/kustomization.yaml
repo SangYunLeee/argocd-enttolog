@@ -7,3 +7,9 @@ resources:
 - argocd-namespace.yaml
 # argoCD yaml
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+patches:
+- path: fix_argocd_health_check.yaml
+  target:
+    kind: ConfigMap
+    name: argocd-cm
