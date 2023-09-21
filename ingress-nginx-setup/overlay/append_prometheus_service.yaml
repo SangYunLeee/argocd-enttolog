@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: ingress-nginx-controller
+spec:
+  ports:
+    - name: prometheus
+      port: 10254
+      targetPort: prometheus
