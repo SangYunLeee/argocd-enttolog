@@ -9,8 +9,8 @@ resources:
 - https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
 - issuer.yaml
 - ingress.yaml
-- application.yaml
-
+- entto_application.yaml
+- metric_application.yaml
 generatorOptions:
   disableNameSuffixHash: true
 secretGenerator:
