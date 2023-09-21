@@ -13,3 +13,18 @@ patches:
   target:
     kind: ConfigMap
     name: argocd-cm
+
+- path: add_guest_user.yaml
+  target:
+    kind: ConfigMap
+    name: argocd-cm
+
+- path: add_guest_password.yaml
+  target:
+    kind: Secret
+    name: argocd-secret
+
+- path: set_default_user_role.yaml
+  target:
+    kind: ConfigMap
+    name: argocd-rbac-cm
