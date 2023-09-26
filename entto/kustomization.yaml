@@ -16,4 +16,4 @@ generatorOptions:
   disableNameSuffixHash: true
 images:
 - name: sororiri/entto-backend
-  newTag: eb46550
+  newTag: a3137ce
