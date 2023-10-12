@@ -7,3 +7,5 @@ resources:
 - github.com/kubernetes/ingress-nginx/deploy/grafana
 - service.yaml
 - ingress.yaml
+- deployment.yaml
+- issuer.yaml

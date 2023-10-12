@@ -33,3 +33,28 @@ spec:
             name: grafana
             port:
               number: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: influxdb
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-prod"
+  namespace: influxdb
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - influxdb.enttolog.shop
+    secretName: influxdb-tls
+  rules:
+  - host: influxdb.enttolog.shop
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: influxdb
+            port:
+              number: 8086

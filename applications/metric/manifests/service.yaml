@@ -10,3 +10,16 @@ spec:
     protocol: TCP
   selector:
     app.kubernetes.io/name: prometheus
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: influxdb
+  namespace: influxdb
+spec:
+  ports:
+  - port: 8086
+    protocol: TCP
+  selector:
+    app: influxdb
+  type: NodePort
