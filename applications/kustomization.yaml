@@ -5,5 +5,5 @@ commonLabels:
   app: setup-env
 
 resources:
-- ../../applications/entto/config
-- ../../applications/metric/config
+- ./entto/config
+- ./metric/config
