@@ -12,8 +12,6 @@ resources:
 - pv.yaml
 - pvc.yaml
 
-generatorOptions:
-  disableNameSuffixHash: true
 images:
 - name: sororiri/entto-backend
   newTag: a3137ce
