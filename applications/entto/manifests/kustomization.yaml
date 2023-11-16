@@ -14,4 +14,4 @@ resources:
 
 images:
 - name: sororiri/entto-backend
-  newTag: a3137ce
+  newTag: af9d0ae
