@@ -7,3 +7,4 @@ commonLabels:
 resources:
 - ./entto/config
 - ./metric/config
+- ./common/config

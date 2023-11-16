@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  namespace: storage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+      use: production
+  template:
+    metadata:
+      labels:
+        app: mysql
+        use: production
+    spec:
+      containers:
+        - name: mysql-container
+          image: mysql:latest
+          envFrom:
+            - secretRef:
+                name: sql-secret
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql
+            - name: config-volume
+              mountPath: /etc/mysql/conf.d
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: role-mysql
+                    operator: Exists
+      volumes:
+        - name: mysql-persistent-storage
+          hostPath:
+            path: /k8s/var/lib/mysql
+        - name: config-volume
+          configMap:
+            name: mysql-config
