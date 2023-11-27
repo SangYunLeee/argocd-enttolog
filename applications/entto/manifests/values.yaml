@@ -1,0 +1,28 @@
+backend:
+  name: entto-backend-test
+  replicaCount: 2
+  image:
+    repository: "sororiri/entto-backend"
+    tag: "af9d0ae"
+
+frontend:
+  name: entto-front-test
+  replicaCount: 1
+  image:
+    repository: "sororiri/entto-front"
+    tag: "0.0.3"
+
+ingress:
+  backend:
+    host: www.enttolog.xyz
+  frontend:
+    host: www.enttolog.shop
+
+pv:
+  name: entto-nfs-pv-test
+  nfs:
+    path: /home/sori/db/entto
+    server: 192.168.0.182
+
+pvc:
+  name: entto-nfs-pvc-test
