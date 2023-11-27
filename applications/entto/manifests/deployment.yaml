@@ -26,6 +26,13 @@ spec:
         volumeMounts:
           - name: entto-mount
             mountPath: /app/uploads_
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
       volumes:
       - name: entto-mount
         persistentVolumeClaim:
@@ -52,3 +59,10 @@ spec:
         name: entto-front
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
