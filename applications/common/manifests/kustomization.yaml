@@ -7,3 +7,4 @@ resources:
 - mysql.cm.yaml
 - mysql.deployment.yaml
 - mysql.service.yaml
+- mysql.sealed-secret.yaml

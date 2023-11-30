@@ -6,10 +6,10 @@ kind: Kustomization
 resources:
 - application.yaml
 
-generatorOptions:
-  disableNameSuffixHash: true
+# generatorOptions:
+#   disableNameSuffixHash: true
 
-secretGenerator:
-- name: entto-secret-1
-  envs:
-  - .env
+# secretGenerator:
+# - name: entto-secret-1
+#   envs:
+#   - .env
