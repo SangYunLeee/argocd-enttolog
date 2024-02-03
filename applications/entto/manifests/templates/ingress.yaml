@@ -10,7 +10,7 @@ spec:
   tls:
   - hosts:
     - {{ .Values.ingress.backend.host }}
-    secretName: www-enttolog-xyz-tls
+    secretName: {{ .Values.ingress.backend.host }}-tls
   rules:
   - host: {{ .Values.ingress.backend.host }}
     http:

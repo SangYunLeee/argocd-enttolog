@@ -14,7 +14,7 @@ frontend:
 
 ingress:
   backend:
-    host: www.enttolog.xyz
+    host: api.enttolog.shop
   frontend:
     host: www.enttolog.shop
 
