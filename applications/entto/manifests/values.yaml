@@ -10,7 +10,7 @@ frontend:
   replicaCount: 1
   image:
     repository: "sororiri/entto-front"
-    tag: "0.0.3"
+    tag: "0.0.4"
 
 ingress:
   backend:
