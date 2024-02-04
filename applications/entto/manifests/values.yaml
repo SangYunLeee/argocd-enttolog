@@ -3,7 +3,7 @@ backend:
   replicaCount: 2
   image:
     repository: "sororiri/entto-backend"
-    tag: "sororiri/entto-backend:4ab5dd9"
+    tag: "8d82378"
 frontend:
   name: entto-front
   replicaCount: 1
