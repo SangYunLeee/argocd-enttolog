@@ -3,26 +3,22 @@ backend:
   replicaCount: 2
   image:
     repository: "sororiri/entto-backend"
-    tag: "af9d0ae"
-
+    tag: "sororiri/entto-backend:5ca1e4b"
 frontend:
   name: entto-front
   replicaCount: 1
   image:
     repository: "sororiri/entto-front"
     tag: "0.0.4"
-
 ingress:
   backend:
     host: api.enttolog.shop
   frontend:
     host: www.enttolog.shop
-
 pv:
   name: entto-nfs-pv
   nfs:
     path: /home/sori/db/entto
     server: 192.168.0.182
-
 pvc:
   name: entto-nfs-pvc
