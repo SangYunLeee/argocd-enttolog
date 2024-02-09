@@ -27,6 +27,7 @@ spec:
         volumeMounts:
           - name: entto-mount
             mountPath: /app/uploads_
+            subPath: entto
         resources:
           requests:
             memory: "400Mi"

@@ -18,7 +18,7 @@ ingress:
 pv:
   name: entto-nfs-pv
   nfs:
-    path: /home/sori/db/entto
+    path: /data/nfs1
     server: 192.168.0.182
 pvc:
   name: entto-nfs-pvc
