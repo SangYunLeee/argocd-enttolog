@@ -9,7 +9,7 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source:
-    path: applications/common/manifests
+    path: applications/common/mysql
     repoURL: "https://github.com/SangYunLeee/argocd-enttolog.git"
     targetRevision: HEAD
   syncPolicy:
