@@ -1,0 +1,9 @@
+project: default
+source:
+  repoURL: >-
+    https://sangyunleee.github.io/argocd-enttolog/applications/common/logging/fluent-bit
+  targetRevision: 0.43.0
+  chart: fluent-bit
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: logs

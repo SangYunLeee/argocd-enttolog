@@ -6,3 +6,4 @@ resources:
 - mysql-application.yaml
 - reloader-application.yaml
 - sealed-secret-application.yaml
+- fluent-bit-application.yaml
