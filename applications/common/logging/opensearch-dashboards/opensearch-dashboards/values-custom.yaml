@@ -7,3 +7,11 @@ extraEnvs:
 startupProbe:
   periodSeconds: 20
   initialDelaySeconds: 60
+
+resources:
+  requests:
+    cpu: "300m"
+    memory: "512M"
+  limits:
+    cpu: "300m"
+    memory: "512M"
