@@ -10,4 +10,4 @@ extraEnvs:
     value: initStrongPassword123!
 
 persistence:
-  storageClass: "local-opesearch-storage"
+  storageClass: "local-opensearch-storage"

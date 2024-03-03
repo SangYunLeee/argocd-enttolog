@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opensearch-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: logs
+    server: "https://kubernetes.default.svc"
+  project: default
+  sources:
+    - repoURL: >-
+        https://sangyunleee.github.io/argocd-enttolog/applications/common/logging/opensearch
+      targetRevision: 2.18.0
+      chart: opensearch
+      helm:
+        valueFiles:
+        - $values/applications/common/logging/opensearch/opensearch/values.yaml
+        - $values/applications/common/logging/opensearch/opensearch/values-custom.yaml
+    - repoURL: 'https://github.com/SangYunLeee/argocd-enttolog.git'
+      targetRevision: HEAD
+      ref: values
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
