@@ -1,8 +1,8 @@
-opensearchHosts: "http://opensearch-cluster-master:9200"
+opensearchHosts: "https://opensearch-cluster-master:9200"
 
-extraEnvs:
-  - name: DISABLE_SECURITY_DASHBOARDS_PLUGIN
-    value: "true"
+# extraEnvs:
+#   - name: DISABLE_SECURITY_DASHBOARDS_PLUGIN
+#     value: "true"
 
 startupProbe:
   periodSeconds: 20

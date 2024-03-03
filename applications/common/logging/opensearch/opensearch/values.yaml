@@ -60,7 +60,7 @@ config:
     # WARNING: revise all the lines below before you go into production
     plugins:
       security:
-        disabled: true
+        disabled: false
         ssl:
           transport:
             pemcert_filepath: esnode.pem
