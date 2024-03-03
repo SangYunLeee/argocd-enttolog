@@ -8,7 +8,14 @@ spec:
     namespace: logs
     server: https://kubernetes.default.svc
   project: default
-  source:
-    chart: fluent-bit
-    repoURL: https://sangyunleee.github.io/argocd-enttolog/applications/common/logging/fluent-bit
-    targetRevision: 0.43.0
+  sources:
+    - chart: fluent-bit
+      repoURL: https://sangyunleee.github.io/argocd-enttolog/applications/common/logging/fluent-bit
+      targetRevision: 0.43.0
+      helm:
+        valueFiles:
+        - $values/applications/common/logging/fluent-bit/fluent-bit/values.yaml
+        - $values/applications/common/logging/fluent-bit/fluent-bit/values-custom.yaml
+    - repoURL: 'https://github.com/SangYunLeee/argocd-enttolog.git'
+      targetRevision: HEAD
+      ref: values
