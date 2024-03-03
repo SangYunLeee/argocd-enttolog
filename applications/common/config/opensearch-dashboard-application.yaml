@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opensearch-dashboard-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: logs
+    server: "https://kubernetes.default.svc"
+  project: default
+  sources:
+    - repoURL: >-
+        https://sangyunleee.github.io/argocd-enttolog/applications/common/logging/opensearch-dashboards
+      targetRevision: 2.16.0
+      chart: opensearch-dashboards
+      helm:
+        valueFiles:
+        - $values/applications/common/logging/opensearch-dashboards/opensearch-dashboards/values.yaml
+        - $values/applications/common/logging/opensearch-dashboards/opensearch-dashboards/values-custom.yaml
+    - repoURL: 'https://github.com/SangYunLeee/argocd-enttolog.git'
+      targetRevision: HEAD
+      ref: values
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
