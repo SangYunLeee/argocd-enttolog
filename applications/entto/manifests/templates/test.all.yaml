@@ -34,10 +34,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - test.entto.shop
+    - test.enttolog.shop
     secretName: test-enttolog-shop-tls
   rules:
-  - host: test.entto.shop
+  - host: test.enttolog.shop
     http:
       paths:
       - path: /

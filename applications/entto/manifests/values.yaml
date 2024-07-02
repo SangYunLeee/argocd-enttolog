@@ -12,9 +12,9 @@ frontend:
     tag: "0.0.4"
 ingress:
   backend:
-    host: api.entto.shop
+    host: api.enttolog.shop
   frontend:
-    host: www.entto.shop
+    host: www.enttolog.shop
 pv:
   name: entto-nfs-pv
   nfs:
