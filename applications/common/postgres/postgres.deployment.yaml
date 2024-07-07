@@ -22,7 +22,7 @@ spec:
           - name: POSTGRES_USER
             value: postgres
           - name: POSTGRES_PASSWORD
-            value: postgres
+            value: dltkddbs12
           - name: POSTGRES_DB
             value: postgres
           ports:
@@ -32,11 +32,11 @@ spec:
               mountPath: /var/lib/postgresql/data
           resources:
             requests:
-              memory: "400Mi"
-              cpu: "250m"
-            limits:
-              memory: "500Mi"
+              memory: "1Gi"
               cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1500m"
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
