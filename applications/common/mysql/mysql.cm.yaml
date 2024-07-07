@@ -4,6 +4,6 @@ metadata:
   name: mysql-config
   namespace: storage
 data:
-  test.conf: |
+  my.conf: |
     [mysqld]
     bind-address    = 0.0.0.0

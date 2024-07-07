@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: mysql-container
-          image: mysql:latest
+          image: mysql:8
           envFrom:
             - secretRef:
                 name: sql-secret
@@ -47,7 +47,7 @@ spec:
       volumes:
         - name: mysql-persistent-storage
           hostPath:
-            path: /k8s/var/lib/mysql
+            path: /k8s/var/lib/mysql_
         - name: config-volume
           configMap:
             name: mysql-config
