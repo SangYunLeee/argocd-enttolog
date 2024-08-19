@@ -13,6 +13,8 @@ spec:
       labels:
         app: jenkins-server
     spec:
+      nodeSelector:
+        jenkins: "true"
       securityContext:
             fsGroup: 1000
             runAsUser: 1000
@@ -53,5 +55,5 @@ spec:
               mountPath: /var/jenkins_home
       volumes:
         - name: jenkins-data
-          persistentVolumeClaim:
-              claimName: jenkins-pv-claim-1
+          hostPath:
+            path: /k8s/var/jenkins_home

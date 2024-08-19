@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins-application
+  namespace: argocd
+spec:
+  destination:
+    namespace: devops-tools
+    server: "https://kubernetes.default.svc"
+  project: default
+  source:
+    path: applications/common/jenkins
+    repoURL: "https://github.com/SangYunLeee/argocd-enttolog.git"
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
