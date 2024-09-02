@@ -1,0 +1,9 @@
+backend:
+  name: memo-backend
+  replicaCount: 2
+  image:
+    repository: "sororiri/memo-backend"
+    tag: "0.0.1"
+ingress:
+  backend:
+    host: memoapi.entto.shop

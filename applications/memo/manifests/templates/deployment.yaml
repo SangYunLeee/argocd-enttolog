@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.backend.name }}
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.backend.name }}
+  replicas: {{ .Values.backend.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.backend.name }}
+        tier: backend
+    spec:
+      containers:
+      - image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+        imagePullPolicy: Always
+        name: {{ .Values.backend.name }}
+        ports:
+        - containerPort: 3001
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
