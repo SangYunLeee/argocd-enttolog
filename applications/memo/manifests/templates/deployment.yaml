@@ -39,11 +39,11 @@ spec:
           periodSeconds: 10
           timeoutSeconds: 2
           failureThreshold: 10
-          volumeMounts:
-            - name: host-path-volume
-              mountPath: /app/public
+        volumeMounts:
+        - name: host-path-volume
+          mountPath: /app/public
+          subPath: memo/public
       volumes:
         - name: host-path-volume
           hostPath:
-            path: /data/nfs1/memo/public
-
+            path: /data/nfs1
