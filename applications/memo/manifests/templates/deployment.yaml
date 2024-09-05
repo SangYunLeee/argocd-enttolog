@@ -21,6 +21,9 @@ spec:
         name: {{ .Values.backend.name }}
         ports:
         - containerPort: 3001
+        envFrom:
+        - configMapRef:
+            name: backend-config
         resources:
           requests:
             memory: "400Mi"
@@ -32,7 +35,15 @@ spec:
           httpGet:
             path: /
             port: 3001
-          initialDelaySeconds: 90
+          initialDelaySeconds: 110
           periodSeconds: 10
           timeoutSeconds: 2
           failureThreshold: 10
+          volumeMounts:
+            - name: host-path-volume
+              mountPath: /app/public
+      volumes:
+        - name: host-path-volume
+          hostPath:
+            path: /data/nfs1/memo/public
+

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  BACKEND_URL: memoapi.entto.shop
+  BACKEND_PORT: "3001"
+  JWT_SECRET: leesecret
+  HASH_ROUNDS: "7"
+  DB_HOST: "postgres-prd.storage.svc"
+  DB_PORT: "5432"
+  DB_TYPE: postgres
+  DB_USERNAME: postgres
+  DB_PASSWORD: dltkddbs12
+  DB_DATABASE: postgres
