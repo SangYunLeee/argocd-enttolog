@@ -3,7 +3,17 @@ backend:
   replicaCount: 2
   image:
     repository: "sororiri/memo-backend"
-    tag: "0.0.6"
+    tag: "0.0.11"
+
+frontend:
+  name: memo-frontend
+  replicaCount: 1
+  image:
+    repository: "sororiri/memo-front"
+    tag: "0.0.1"
+
 ingress:
   backend:
     host: memoapi.entto.shop
+  frontend:
+    host: memo.entto.shop
