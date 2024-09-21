@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: backend-config
 data:
-  BACKEND_URL: memoapi.entto.shop
+  BACKEND_URL: https://memoapi.entto.shop
   BACKEND_PORT: "3001"
   JWT_SECRET: leesecret
   HASH_ROUNDS: "7"
