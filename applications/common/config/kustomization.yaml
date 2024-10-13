@@ -8,3 +8,4 @@ resources:
 - sealed-secret-application.yaml
 - fluent-bit-application.yaml
 - postgres-application.yaml
+- jenkins-application.yaml

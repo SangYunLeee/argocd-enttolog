@@ -8,6 +8,8 @@ spec:
   selector:
     matchLabels:
       app: jenkins-server
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
@@ -16,12 +18,12 @@ spec:
       nodeSelector:
         jenkins: "true"
       securityContext:
-            fsGroup: 1000
-            runAsUser: 1000
+        fsGroup: 1000
+        runAsUser: 1000
       serviceAccountName: jenkins-admin
       containers:
         - name: jenkins
-          image: jenkins/jenkins:lts
+          image: sororiri/jenkins:0.0.3
           resources:
             limits:
               memory: "2Gi"
@@ -53,7 +55,13 @@ spec:
           volumeMounts:
             - name: jenkins-data
               mountPath: /var/jenkins_home
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
+              readOnly: true
       volumes:
         - name: jenkins-data
           hostPath:
             path: /k8s/var/jenkins_home
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
