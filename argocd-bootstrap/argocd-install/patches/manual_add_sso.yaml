@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  dex.config: |
+    connectors:
+      - type: github
+        id: github # -- 원하는 ID
+        name: GitHub # -- 여러개의 SSO 사용시 화면에 출력되는 이름
+        config:
+          clientID: <CLIENT_ID>
+          clientSecret: <CLIENT_SECRET>
+          orgs:
+          - name: memomou
+    url: https://argocd.entto.shop
