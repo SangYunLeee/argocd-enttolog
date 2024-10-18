@@ -22,7 +22,7 @@ patches:
     kind: Secret
     name: argocd-secret
 
-- path: patches/set_default_user_role.yaml
+- path: patches/patch_argocd-rbac-cm.yaml
   target:
     kind: ConfigMap
     name: argocd-rbac-cm
