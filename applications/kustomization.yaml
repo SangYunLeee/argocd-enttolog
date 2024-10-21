@@ -6,5 +6,5 @@ commonLabels:
 
 resources:
 - ./entto/config
-- ./metric/config
+- ./memo/config
 - ./common/config
