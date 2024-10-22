@@ -11,7 +11,7 @@ spec:
   sources:
     - repoURL: >-
         https://sangyunleee.github.io/devops-package/prometheus-stack/charts/stable
-      targetRevision: 0.1.3
+      targetRevision: 0.1.4
       chart: prometheus-stack
       helm:
   syncPolicy:
