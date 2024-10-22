@@ -1,19 +1,13 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: prometheus-application
-  namespace: argocd
-spec:
-  destination:
-    namespace: monitoring
-    server: "https://kubernetes.default.svc"
-  project: default
-  sources:
-    - repoURL: >-
-        https://sangyunleee.github.io/devops-package/prometheus-stack/charts/stable
-      targetRevision: 0.1.4
-      chart: prometheus-stack
-      helm:
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
+project: default
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: monitoring
+syncPolicy:
+  syncOptions:
+    - CreateNamespace=true
+sources:
+  - repoURL: 'https://github.com/SangYunLeee/devops-package.git'
+    path: prometheus-stack/helm
+    targetRevision: HEAD
+    directory:
+      recurse: true
